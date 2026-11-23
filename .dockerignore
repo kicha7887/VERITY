@@ -1,0 +1,17 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/uploads/*
+data/processed/*
+data/indexes/*
+!data/**/.gitkeep
+*.log
+.DS_Store
