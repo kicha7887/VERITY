@@ -11,9 +11,24 @@ UPLOADS, PROCESSED, INDEXES = DATA / "uploads", DATA / "processed", DATA / "inde
 for _p in (UPLOADS, PROCESSED, INDEXES):
     _p.mkdir(parents=True, exist_ok=True)
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
-# Model availability/quota changes over time: always override via GEMINI_MODEL if this default is unavailable.
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "").strip() or "gemini-3.5-flash-lite"
+def _get_secret(key, default=""):
+    val = os.getenv(key, "")
+    if not val:
+        try:
+            import streamlit as st
+            if hasattr(st, "secrets") and key in st.secrets:
+                val = str(st.secrets[key])
+        except Exception:
+            pass
+    val = (val or "").strip()
+    return val if val else default
+
+GEMINI_API_KEY = _get_secret("GEMINI_API_KEY", "")
+# Ignore template placeholders so user is clearly told to configure their key
+if GEMINI_API_KEY.lower().startswith("your_") or "placeholder" in GEMINI_API_KEY.lower():
+    GEMINI_API_KEY = ""
+
+GEMINI_MODEL = _get_secret("GEMINI_MODEL", "gemini-3.5-flash-lite") or "gemini-3.5-flash-lite"
 
 EMBED_MODEL = "all-MiniLM-L6-v2"
 MAX_UPLOAD_MB = int(os.getenv("MAX_UPLOAD_MB", "50"))

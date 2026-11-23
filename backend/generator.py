@@ -40,11 +40,19 @@ def available():
 
 
 _cached_client = None
+_cached_key = None
+
+
+def reset_client():
+    global _cached_client, _cached_key
+    _cached_client = None
+    _cached_key = None
 
 
 def _client():
-    global _cached_client
-    if _cached_client is None:
+    global _cached_client, _cached_key
+    if _cached_client is None or _cached_key != config.GEMINI_API_KEY:
+        _cached_key = config.GEMINI_API_KEY
         _cached_client = genai.Client(api_key=config.GEMINI_API_KEY)
     return _cached_client
 

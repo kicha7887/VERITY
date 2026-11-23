@@ -190,6 +190,12 @@ def sidebar():
             st.slider("Passages retrieved (top-k)", 2, 12, config.TOP_K, key="top_k")
             st.slider("Relevance threshold (0 = automatic)", 0.0, 0.6, 0.0, 0.01, key="min_score")
             st.toggle("Use page images for charts (Gemini vision)", True, key="use_visual")
+            api_key_input = st.text_input("Gemini API Key", value=config.GEMINI_API_KEY, type="password", key="user_api_key",
+                                          help="Paste your Google AI Studio API key (starts with AIzaSy...)")
+            if api_key_input and api_key_input != config.GEMINI_API_KEY:
+                config.GEMINI_API_KEY = api_key_input.strip()
+                generator.reset_client()
+                st.rerun()
             st.caption(f"Embeddings: {embeddings.status()}")
             st.caption(f"Gemini: {'configured · ' + config.GEMINI_MODEL if generator.available() else 'NOT configured (set GEMINI_API_KEY)'}")
             if st.button("Delete all my documents", key="wipe"):
