@@ -1,0 +1,497 @@
+/* ==========================================================================
+   VERITY — Executive Dark Brown Theme Stylesheet
+   Dark Roast Espresso, Warm Mocha, Caramel Amber & Steamed Cream
+   ========================================================================== */
+
+:root {
+  /* Dark Brown Color Palette */
+  --palette-espresso: #150E0C;  /* Deepest Dark Roast: App Canvas Background */
+  --palette-card:     #211714;  /* Dark Mocha Surface: Cards, Sidebar, Panels */
+  --palette-container:#2B1E19;  /* Roasted Mocha: Subtle Containers, Quotes, Input */
+  --palette-hover:    #372721;  /* Warm Coffee Hover State */
+  
+  --palette-border-subtle: #3A2922; /* Subtle Border */
+  --palette-border-medium: #543B31; /* Medium Border / Dividers */
+  --palette-caramel:       #D4A373; /* Warm Caramel Amber: Primary Accents & Buttons */
+  --palette-caramel-hover: #E0B488; /* Lighter Amber Hover */
+  --palette-cream:         #F5EBE1; /* Steamed Cream: Main High-Contrast Text */
+  --palette-latte:         #D7C4B7; /* Soft Latte: Secondary Text */
+  --palette-taupe:         #9E8675; /* Warm Taupe: Captions, Meta, Muted Labels */
+
+  /* Semantic UI Mappings */
+  --bg-app: var(--palette-espresso);
+  --bg-surface: var(--palette-card);
+  --bg-subtle: var(--palette-container);
+  --bg-muted: var(--palette-hover);
+  
+  --border-subtle: var(--palette-border-subtle);
+  --border-medium: var(--palette-border-medium);
+  --border-focus: var(--palette-caramel);
+
+  --text-main: var(--palette-cream);
+  --text-secondary: var(--palette-latte);
+  --text-muted: var(--palette-taupe);
+  --text-light: #7A6658;
+
+  --primary: var(--palette-caramel);
+  --primary-hover: var(--palette-caramel-hover);
+  --primary-subtle: rgba(212, 163, 115, 0.12);
+  --primary-border: rgba(212, 163, 115, 0.35);
+
+  /* Status Badges */
+  --success-bg: rgba(46, 125, 50, 0.22);
+  --success-text: #86EFAC;
+  --success-border: rgba(134, 239, 172, 0.35);
+
+  --warning-bg: rgba(217, 119, 6, 0.22);
+  --warning-text: #FDE047;
+  --warning-border: rgba(253, 224, 71, 0.35);
+
+  --danger-bg: rgba(220, 38, 38, 0.22);
+  --danger-text: #FCA5A5;
+  --danger-border: rgba(252, 165, 165, 0.35);
+
+  --info-bg: var(--primary-subtle);
+  --info-text: var(--palette-caramel);
+  --info-border: var(--primary-border);
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.45), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.55), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
+/* Base Body and Layout */
+html, body, .stApp {
+  background-color: var(--bg-app) !important;
+  color: var(--text-main) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+
+header[data-testid="stHeader"] {
+  background: transparent !important;
+}
+
+#MainMenu, footer {
+  visibility: hidden;
+}
+
+/* ==========================================================================
+   Sidebar: Elegant Dark Roast
+   ========================================================================== */
+[data-testid="stSidebar"] {
+  background-color: var(--bg-surface) !important;
+  border-right: 1px solid var(--border-subtle) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-testid="stSidebar"] * {
+  color: var(--text-secondary);
+}
+
+[data-testid="stSidebar"] h1, 
+[data-testid="stSidebar"] h2, 
+[data-testid="stSidebar"] h3 {
+  color: var(--text-main) !important;
+}
+
+[data-testid="stSidebar"] img {
+  border-radius: 10px;
+}
+
+/* Brand Header */
+.brand {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--text-main) !important;
+  margin: 0 !important;
+  line-height: 1.2;
+}
+
+.tagline {
+  font-size: 0.75rem !important;
+  font-weight: 500;
+  color: var(--palette-caramel) !important;
+  letter-spacing: 0.01em;
+  margin-top: 0.2rem;
+  margin-bottom: 1.1rem;
+}
+
+.side-label {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--palette-caramel) !important;
+  margin: 1.2rem 0 0.5rem 0 !important;
+}
+
+/* Sidebar Buttons */
+[data-testid="stSidebar"] .stButton > button {
+  background: var(--bg-subtle) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  font-weight: 500 !important;
+  font-size: 0.86rem !important;
+  border-radius: 8px !important;
+  padding: 0.4rem 0.8rem !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.15s ease-in-out !important;
+  width: 100%;
+}
+
+[data-testid="stSidebar"] .stButton > button:hover {
+  background: var(--bg-muted) !important;
+  border-color: var(--primary-border) !important;
+  color: var(--primary) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* "New Chat" button special emphasis */
+[data-testid="stSidebar"] button:has(p:contains("New Chat")),
+[data-testid="stSidebar"] [data-testid="stBaseButton-secondary"]:first-child button {
+  background: var(--primary-subtle) !important;
+  border: 1px solid var(--primary-border) !important;
+  color: var(--primary) !important;
+  font-weight: 600 !important;
+}
+
+/* File Uploader Dropzone */
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
+  background: var(--bg-app) !important;
+  border: 1.5px dashed var(--border-medium) !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease;
+  padding: 1rem 0.5rem !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"]:hover {
+  background: var(--primary-subtle) !important;
+  border-color: var(--primary) !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] * {
+  color: var(--text-secondary) !important;
+}
+
+/* Sidebar Expanders & Dividers */
+[data-testid="stSidebar"] [data-testid="stExpander"] {
+  background: var(--bg-subtle) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 10px !important;
+}
+
+[data-testid="stSidebar"] hr {
+  border-color: var(--border-subtle) !important;
+  margin: 1rem 0 !important;
+}
+
+/* ==========================================================================
+   Main Content Area
+   ========================================================================== */
+
+/* Topbar Header */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.topbar .title {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: var(--text-main) !important;
+  letter-spacing: -0.01em;
+}
+
+.topbar .meta {
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  color: var(--text-muted) !important;
+}
+
+/* View Radio Pill switcher styling */
+div[data-testid="stRadio"] > div {
+  background: var(--bg-subtle) !important;
+  padding: 4px !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+div[data-testid="stRadio"] label {
+  background: transparent !important;
+  border-radius: 6px !important;
+  padding: 4px 12px !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: var(--text-secondary) !important;
+  transition: all 0.15s ease !important;
+}
+
+div[data-testid="stRadio"] label:hover {
+  color: var(--primary) !important;
+}
+
+/* Welcome Hero Screen */
+.welcome {
+  text-align: center;
+  padding: 2.5rem 1rem 1.75rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--primary-subtle);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  padding: 3px 12px;
+  border-radius: 9999px;
+  margin-bottom: 0.9rem;
+}
+
+.welcome h1 {
+  font-size: 2.3rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--text-main) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.welcome .sub {
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.5 !important;
+}
+
+.welcome .sup {
+  font-size: 0.92rem !important;
+  color: var(--text-muted) !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Suggestion Buttons as Modern Cards */
+.stButton > button {
+  background-color: var(--bg-surface) !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 10px !important;
+  font-weight: 500 !important;
+  font-size: 0.88rem !important;
+  padding: 0.6rem 1rem !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.15s ease-in-out !important;
+}
+
+.stButton > button:hover {
+  background-color: var(--bg-subtle) !important;
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Chat Messages & Streamlit Chat Interface
+   ========================================================================== */
+[data-testid="stChatMessage"] {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 14px !important;
+  padding: 1rem 1.25rem !important;
+  margin-bottom: 1rem !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+[data-testid="stChatMessage"] p, 
+[data-testid="stChatMessage"] li {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 0.96rem !important;
+  line-height: 1.65 !important;
+  color: var(--text-secondary) !important;
+}
+
+[data-testid="stChatMessage"] strong {
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+}
+
+/* Chat Input Bar */
+[data-testid="stChatInput"] {
+  background-color: var(--bg-surface) !important;
+  border: 1.5px solid var(--border-medium) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-testid="stChatInput"] textarea {
+  color: var(--text-main) !important;
+}
+
+[data-testid="stChatInput"]:focus-within {
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2), var(--shadow-md) !important;
+}
+
+/* ==========================================================================
+   Badges, Statuses & Quotes
+   ========================================================================== */
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 6px;
+  margin-left: 6px;
+  letter-spacing: 0.02em;
+}
+
+.b-ready {
+  background: var(--success-bg) !important;
+  color: var(--success-text) !important;
+  border: 1px solid var(--success-border) !important;
+}
+
+.b-failed {
+  background: var(--danger-bg) !important;
+  color: var(--danger-text) !important;
+  border: 1px solid var(--danger-border) !important;
+}
+
+.b-processing, .b-uploaded {
+  background: var(--warning-bg) !important;
+  color: var(--warning-text) !important;
+  border: 1px solid var(--warning-border) !important;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+}
+
+.s-verified {
+  background: var(--success-bg) !important;
+  color: var(--success-text) !important;
+  border: 1px solid var(--success-border) !important;
+}
+
+.s-partial {
+  background: var(--warning-bg) !important;
+  color: var(--warning-text) !important;
+  border: 1px solid var(--warning-border) !important;
+}
+
+.s-refused {
+  background: var(--danger-bg) !important;
+  color: var(--danger-text) !important;
+  border: 1px solid var(--danger-border) !important;
+}
+
+.s-retrieval_only {
+  background: var(--info-bg) !important;
+  color: var(--info-text) !important;
+  border: 1px solid var(--info-border) !important;
+}
+
+.s-error {
+  background: var(--danger-bg) !important;
+  color: var(--danger-text) !important;
+  border: 1px solid var(--danger-border) !important;
+}
+
+/* Citations & Evidence */
+.cite-head {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.cite-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.quote {
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--primary);
+  border-radius: 6px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  max-height: 260px;
+  overflow: auto;
+  margin: 0.5rem 0 0.75rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* General Expanders */
+[data-testid="stExpander"] {
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 10px !important;
+  background: var(--bg-surface) !important;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0.75rem;
+}
+
+/* Metrics and Containers in Insights View */
+div[data-testid="stMetric"] {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+div[data-testid="stMetric"] label {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+  font-size: 0.82rem;
+}
+
+div[data-testid="stMetric"] [data-testid="stMetricValue"] {
+  color: var(--text-main) !important;
+  font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+  .welcome h1 { font-size: 1.8rem !important; }
+  .topbar { flex-direction: column; align-items: flex-start; gap: 8px; }
+}

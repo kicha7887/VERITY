@@ -1,0 +1,12 @@
+{
+  "_note": "Supplementary synthetic document (tests/make_sample_pdf.py). Add questions for the OFFICIAL dataset PDFs after running scripts/inspect_dataset.py, using real expected pages.",
+  "documents": {"sample": "tests/sample_verity_supplementary.pdf"},
+  "questions": [
+    {"id": "q1", "doc": "sample", "dataset": "supplementary", "type": "text", "question": "What was household access to safe drinking water in 2023?", "expected_pages": [1], "expected_keywords": ["78.4"]},
+    {"id": "q2", "doc": "sample", "dataset": "supplementary", "type": "table", "question": "How many households were connected in Southgate in 2023?", "expected_pages": [2], "expected_keywords": ["18,100"]},
+    {"id": "q3", "doc": "sample", "dataset": "supplementary", "type": "chart", "question": "What does Figure 1 show about households connected over time?", "expected_pages": [3], "expected_keywords": []},
+    {"id": "q4", "doc": "sample", "dataset": "supplementary", "type": "cross-page", "question": "What preliminary estimate was published for 2023 coverage, and what is the audited figure?", "expected_pages": [1, 4], "expected_keywords": ["77.9", "78.4"]},
+    {"id": "q5", "doc": "sample", "dataset": "supplementary", "type": "scanned", "question": "How many pumping stations were inspected?", "expected_pages": [5], "expected_keywords": ["14"]},
+    {"id": "q6", "doc": "sample", "dataset": "supplementary", "type": "refusal", "question": "What was the average electricity tariff per kWh in 2023?", "expected_pages": [], "expected_keywords": [], "should_refuse": true}
+  ]
+}

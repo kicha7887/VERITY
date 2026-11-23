@@ -1,0 +1,192 @@
+{
+  "environment": {
+    "embedding_backend": "TF-IDF fallback (embedding model unavailable: NameError)",
+    "gemini_used": true,
+    "gemini_model": "gemini-2.5-flash",
+    "note": null
+  },
+  "aggregate": {
+    "n_questions": 6,
+    "retrieval_hit_rate": 0.8,
+    "retrieval_all_expected_rate": 0.6,
+    "retrieval_empty_on_refusal_questions": 0.0,
+    "mean_retrieval_s": 0.001,
+    "processing_s": {
+      "sample": 3.63
+    },
+    "citation_correctness": 0.6,
+    "faithfulness_verified_rate": 0.0,
+    "refusal_accuracy": 0.0,
+    "overall_success_rate": 0.0,
+    "mean_total_s": 0.03
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "text",
+      "dataset": "supplementary",
+      "question": "What was household access to safe drinking water in 2023?",
+      "retrieved_pages": [
+        1
+      ],
+      "expected_pages": [
+        1
+      ],
+      "retrieval_hit": true,
+      "retrieval_all_expected": true,
+      "retrieval_empty": false,
+      "retrieval_s": 0.0,
+      "status": "retrieval_only",
+      "cited_pages": [
+        1
+      ],
+      "total_s": 0.08,
+      "answer_preview": "\u26a0\ufe0f Could not reach Gemini (network or service error). Please retry. The most relevant retrieved passages are shown below.",
+      "citation_correct": true,
+      "faithful": false,
+      "keywords_present": false,
+      "refusal_correct": true,
+      "success": false
+    },
+    {
+      "id": "q2",
+      "type": "table",
+      "dataset": "supplementary",
+      "question": "How many households were connected in Southgate in 2023?",
+      "retrieved_pages": [
+        2,
+        3
+      ],
+      "expected_pages": [
+        2
+      ],
+      "retrieval_hit": true,
+      "retrieval_all_expected": true,
+      "retrieval_empty": false,
+      "retrieval_s": 0.001,
+      "status": "retrieval_only",
+      "cited_pages": [
+        2,
+        3
+      ],
+      "total_s": 0.01,
+      "answer_preview": "\u26a0\ufe0f Could not reach Gemini (network or service error). Please retry. The most relevant retrieved passages are shown below.",
+      "citation_correct": true,
+      "faithful": false,
+      "keywords_present": false,
+      "refusal_correct": true,
+      "success": false
+    },
+    {
+      "id": "q3",
+      "type": "chart",
+      "dataset": "supplementary",
+      "question": "What does Figure 1 show about households connected over time?",
+      "retrieved_pages": [
+        2,
+        3,
+        4
+      ],
+      "expected_pages": [
+        3
+      ],
+      "retrieval_hit": true,
+      "retrieval_all_expected": true,
+      "retrieval_empty": false,
+      "retrieval_s": 0.0,
+      "status": "retrieval_only",
+      "cited_pages": [
+        2,
+        3,
+        4
+      ],
+      "total_s": 0.04,
+      "answer_preview": "\u26a0\ufe0f Could not reach Gemini (network or service error). Please retry. The most relevant retrieved passages are shown below.",
+      "citation_correct": true,
+      "faithful": false,
+      "keywords_present": true,
+      "refusal_correct": true,
+      "success": false
+    },
+    {
+      "id": "q4",
+      "type": "cross-page",
+      "dataset": "supplementary",
+      "question": "What preliminary estimate was published for 2023 coverage, and what is the audited figure?",
+      "retrieved_pages": [
+        3,
+        4
+      ],
+      "expected_pages": [
+        1,
+        4
+      ],
+      "retrieval_hit": true,
+      "retrieval_all_expected": false,
+      "retrieval_empty": false,
+      "retrieval_s": 0.001,
+      "status": "retrieval_only",
+      "cited_pages": [
+        3,
+        4
+      ],
+      "total_s": 0.03,
+      "answer_preview": "\u26a0\ufe0f Could not reach Gemini (network or service error). Please retry. The most relevant retrieved passages are shown below.",
+      "citation_correct": false,
+      "faithful": false,
+      "keywords_present": false,
+      "refusal_correct": true,
+      "success": false
+    },
+    {
+      "id": "q5",
+      "type": "scanned",
+      "dataset": "supplementary",
+      "question": "How many pumping stations were inspected?",
+      "retrieved_pages": [],
+      "expected_pages": [
+        5
+      ],
+      "retrieval_hit": false,
+      "retrieval_all_expected": false,
+      "retrieval_empty": true,
+      "retrieval_s": 0.001,
+      "status": "refused",
+      "cited_pages": [],
+      "total_s": null,
+      "answer_preview": "I couldn't find sufficient evidence in the uploaded documents to answer this question reliably.\n\n**What I searched for:** How many pumping stations were inspected?",
+      "citation_correct": false,
+      "faithful": false,
+      "keywords_present": false,
+      "refusal_correct": false,
+      "success": false
+    },
+    {
+      "id": "q6",
+      "type": "refusal",
+      "dataset": "supplementary",
+      "question": "What was the average electricity tariff per kWh in 2023?",
+      "retrieved_pages": [
+        3,
+        4
+      ],
+      "expected_pages": [],
+      "retrieval_hit": null,
+      "retrieval_all_expected": null,
+      "retrieval_empty": false,
+      "retrieval_s": 0.0,
+      "status": "retrieval_only",
+      "cited_pages": [
+        3,
+        4
+      ],
+      "total_s": 0.01,
+      "answer_preview": "\u26a0\ufe0f Could not reach Gemini (network or service error). Please retry. The most relevant retrieved passages are shown below.",
+      "citation_correct": null,
+      "faithful": false,
+      "keywords_present": true,
+      "refusal_correct": false,
+      "success": false
+    }
+  ]
+}
